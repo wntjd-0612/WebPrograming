@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>고객의 소리</h1>
+    <form>
+        아이디: <input type="text" name="ID"><br>
+        구매번호: <input type="number" name="num"> <br>
+        비밀번호: <input type="passworld" name="passworld"> <br>
+        " 제품을 평가해주세요: " <br>
+        <textarea name="textarea"  cols="30" rows="5"></textarea><br>
+        <input type="reset" name="reset" value="초기화">
+        <input type="submit" name="submit" value="제출">
+        
+    </form>
+    <h2>선호도 조사 입니다. </h2>
+    <form name="form2" method="post">
+        성별:
+        <input type="radio" name="gender" value="male">남성
+        <input type="radio" name="gender" value="female">여성
+        <br>
+        과일선택 :
+        <input type="checkbox" name="fluits" value="apple">사과
+        <input type="checkbox" name="fluits" value="banana" checked>바나나
+        <input type="checkbox" name="fluits" value="grape">포도
+    </form>
+    <h3>버튼 다루기</h3>
+    <input type="button" value="눌러봐" onclick="alert('hi')">
+    <button type="button"><img src="https://avatars.githubusercontent.com/u/77531416?v=4"></button>
+</body>
+</html>
