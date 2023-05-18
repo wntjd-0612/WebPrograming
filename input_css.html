@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input[type=text],input[type=subject]{
+            width: 90%;
+            padding: 6px 10px;
+            margin: 10px 0;
+            display: inline-block;
+            border: 2px solid blue;
+            border-radius: 4px;
+        }
+        input[type=subject]{
+            height: 100px;
+        }
+        input[type=text]:hover{
+            background-color: bisque;
+        }input[type=text]:focus{
+            font-size: 1.2em;
+        }input[type=submit] {
+            background-color: #04AA6D;
+            border: none;
+            color: white;
+            padding: 8px 24px;
+        }
+    </style>
+</head>
+<body>
+    <h2>상품 평</h2>
+    <p>받으신 상품을 평가해주세요.</p>
+    <div>
+        <form action="">
+            <label for="name">이름</label><br>
+            <input type="text" id="name" placeholder="이름"></input><br>
+            <label for="name">이메일</label><br>
+            <input type="text" id="email" placeholder="이메일"></input><br>
+            <label for="name">상품 평</label><br>
+            <input type="subject" id="subject" placeholder="상품을 평가해주세요"></input><br>
+            <br>
+            <input type="submit" id="submit" placeholder="submit">
+        </form>
+    </div>
+</body>
+</html>
