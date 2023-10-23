@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .button{
+            padding: 10px;
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    숫자 1: <input type="text" id="number1" value="9"><br>
+    숫자 2: <input type="text" id="number2" value="6"><br>
+    <input type="button" value="+" onclick="add()" class="button">
+    <input type="button" value="-" onclick="ck()" class="button">
+    <input type="button" value="*" onclick="mul()" class="button">
+    <input type="button" value="/" onclick="sksn()" class="button">
+    <br>
+    연산결과: <input type="text" id="result" value="">
+    <script>
+        function add(){
+            let num1=parseFloat(document.getElementById("number1").value)
+            let num2=parseFloat(document.getElementById("number2").value)
+            document.getElementById("result").value=num1+num2;
+        }
+        function ck(){
+            let num1=parseFloat(document.getElementById("number1").value)
+            let num2=parseFloat(document.getElementById("number2").value)
+            document.getElementById("result").value=num1-num2;
+        }
+        function mul(){
+            let num1=parseFloat(document.getElementById("number1").value)
+            let num2=parseFloat(document.getElementById("number2").value)
+            document.getElementById("result").value=num1*num2;
+        }
+        function sksn(){
+            let num1=parseFloat(document.getElementById("number1").value)
+            let num2=parseFloat(document.getElementById("number2").value)
+            document.getElementById("result").value=num1/num2;
+        }
+    </script>
+</body>
+</html>
