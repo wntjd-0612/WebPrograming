@@ -1,0 +1,69 @@
+<html>
+
+<head>
+    <title>주사위 굴리기</title>
+    <style>
+        * {
+            font-family: 굴림, sans-serif;
+            text-align: center;
+        }
+
+        #dice {
+            height: 100px;
+            width: 100px;
+            margin: 10px auto;
+            background-color: yellow;
+            border: 1px solid gray;
+            border-radius: 10px;
+            font-size: 100px;
+        }
+    </style>
+    <script>
+        let list=[]
+        list.push(0);
+        list.push(0);
+        list.push(0);
+        list.push(0);
+        list.push(0);
+        list.push(0);
+        
+        function roll() {
+            let dice =  Math.floor(Math.random() * (7 - 1)) + 1;
+            document.getElementById("dice").innerHTML=dice;
+            if(dice==1){
+                document.getElementById("dice").style="background-color: blue;";
+                list[0]++;
+            }
+            if(dice==2){
+                document.getElementById("dice").style="background-color: red;";
+                list[1]++;
+            }
+            if(dice==3){
+                document.getElementById("dice").style="background-color: green;";
+                list[2]++;
+            }
+            if(dice==4){
+                document.getElementById("dice").style="background-color: black;color:white;";
+                list[3]++;
+            }
+            if(dice==5){
+                document.getElementById("dice").style="background-color: purple;";
+                list[4]++;
+            }
+            if(dice==6){
+                document.getElementById("dice").style="background-color: yellow;";
+                list[5]++;
+            }
+            document.getElementById("asdf").innerHTML=list
+        };
+    </script>
+</head>
+
+<body>
+    <h3>주사위 굴리기 게임입니다.</h3>
+    <p id="dice"> </p>
+    <button onclick="roll()">주사위 굴리기</button>
+    <p id="asdf"></p>
+</body>
+
+</html>
