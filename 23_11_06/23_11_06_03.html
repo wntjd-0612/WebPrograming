@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formInt</title>
+</head>
+<body>
+    <p>1부터 100 사이의 정수를 입력하시오.</p>
+    <input id="test">
+    <button type="button" onclick="sub()">제출</button>
+    <p id="result"></p>
+
+    <script>
+        function sub() {
+            let value = document.getElementById("test").value;
+            let s;
+
+            if(!isNaN(value) && parseInt(value) >= 1 && parseInt(value) <= 100) {
+                s = "input value is currect!"
+            }
+            else {
+                s = "input value is not currect.";
+            }
+
+            document.getElementById("result").innerHTML = s;
+        }
+    </script>
+</body>
+</html>

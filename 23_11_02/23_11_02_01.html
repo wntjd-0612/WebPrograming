@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        .main{
+            background-color: #e9e9e9;
+            padding: 30px;
+        }
+    </style>
+    <script>
+        let s;
+
+        function generateRandomProblem() {
+            // 랜덤한 숫자 생성
+            let n1 = Math.floor(Math.random() * 10);
+            let n2 = Math.floor(Math.random() * 10);
+            let n3 = Math.floor(Math.random() * 10);
+            let n4 = Math.floor(Math.random() * 10);
+
+            // 랜덤한 연산자 생성
+            let a = ['', '', ''];
+            for (let i = 0; i < 3; i++) {
+                let randomOperator = Math.floor(Math.random() * 4);
+                if (randomOperator === 0) {
+                    a[i] = '+';
+                } else if (randomOperator === 1) {
+                    a[i] = '-';
+                } else if (randomOperator === 2) {
+                    a[i] = '*';
+                } else {
+                    a[i] = '/';
+                }
+            }
+
+            s = n1 + a[0] + n2 + a[1] + n3 + a[2] + n4;
+            document.getElementById("problem").value = s;
+        }
+
+        function call() {
+            let answer = document.getElementById("answer").value;
+            let solution = eval(s);
+            if (answer == solution) {
+                alert("정답");
+            } else {
+                alert("틀렸습니다. 정답은 " + solution);
+            }
+        }
+
+        // 페이지 로드 시 초기 문제 생성
+        window.onload = generateRandomProblem;
+    </script>
+</head>
+<body>
+    <h1>Math Quiz</h1>
+    <div id="main">
+        <input type="text" id="problem" value=""><br>
+        <input type="text" id="answer"><br>
+        <button onclick="call()">정답 확인하기</button>
+    </div>
+</body>
+</html>
