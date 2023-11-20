@@ -1,18 +1,39 @@
 <!DOCTYPE html>
-<html>
-<style>
-    #myCanvas {
-        background-color: rgb(241, 239, 209);
-        border: 1px dotted blue;
-    }
-</style>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Drawing App</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+
+        #myCanvas {
+            background-color: rgb(241, 239, 209);
+            border: 2px solid blue;
+        }
+
+        button {
+            padding: 10px;
+            margin: 5px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+    </style>
+</head>
 
 <body>
-    <button onclick="clearCanvas();">화면 지우기</button>
+    <h1>Canvas Drawing App</h1>
+    <button onclick="clearCanvas();">창 초기화</button>
+    <label for="colorPicker">색깔 고르기:</label>
     <input type="color" id="colorPicker" value="#000000">
-    <label for="thickness">선 굵기:</label>
+    <label for="thickness">선 두께:</label>
     <input type="range" id="thickness" min="1" max="10" value="1">
-    <button onclick="saveImage();">이미지 저장</button><br>
+    <button onclick="saveImage();">그림 저장</button><br>
     <canvas id="myCanvas" width="600" height="400"></canvas>
     <script>
         let canvas = document.getElementById("myCanvas");
@@ -20,14 +41,13 @@
         let last_x = 0,
             last_y = 0;
         let draw_mode = false;
-        let eraserMode = false;
 
         function clearCanvas() {
             context.clearRect(0, 0, canvas.width, canvas.height);
         }
 
         let colorPicker = document.getElementById("colorPicker");
-        context.strokeStyle = colorPicker.value;  // Set initial stroke style
+        context.strokeStyle = colorPicker.value; // Set initial stroke style
         colorPicker.addEventListener("input", function () {
             context.strokeStyle = colorPicker.value;
         });
